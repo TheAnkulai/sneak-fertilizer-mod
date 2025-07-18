@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
-	"id": "sneakferilizermod",
-	"version": "1.0.0",
+	"id": "sneakfertilizingmod",
+	"version": "1.0.2",
 	"name": "Sneak Fertilizer mod",
 	"description": "Applies bonemeal effect to crops and saplings when sneaking.",
 	"authors": [
@@ -9,11 +9,11 @@
 	],
 	"contact": {},
 	"license": "MIT",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/sneakfertilizing/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.FertilizerMod"
+			"com.example.FertilizingMod"
 		]
 	},
 	"depends": {

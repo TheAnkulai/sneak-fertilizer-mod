@@ -32,7 +32,7 @@ public class PlayerSneakHandler {
     private static void applyBonemeal(ServerPlayerEntity player) {
         ServerWorld world =(ServerWorld) player.getWorld();
         BlockPos center = player.getBlockPos();
-        int radius = FertilizerMod.RADIUS;
+        int radius = FertilizingMod.RADIUS;
 
         BlockPos.iterateOutwards(center, radius, 1, radius).forEach(pos -> {
             BlockState state = world.getBlockState(pos);
@@ -57,7 +57,6 @@ public class PlayerSneakHandler {
                 || block == Blocks.BEETROOTS
                 || block == Blocks.MELON_STEM
                 || block == Blocks.PUMPKIN_STEM
-                || block == Blocks.SUGAR_CANE
                 || block == Blocks.SWEET_BERRY_BUSH
                 || block == Blocks.NETHER_WART
                 || block == Blocks.OAK_SAPLING
@@ -66,9 +65,12 @@ public class PlayerSneakHandler {
                 || block == Blocks.JUNGLE_SAPLING
                 || block == Blocks.ACACIA_SAPLING
                 || block == Blocks.DARK_OAK_SAPLING
+                || block == Blocks.MANGROVE_PROPAGULE
                 || block == Blocks.CHERRY_SAPLING
                 || block == Blocks.PALE_OAK_SAPLING
                 || block == Blocks.BAMBOO_SAPLING
-                || block == Blocks.BAMBOO;
+                || block == Blocks.BAMBOO
+                || block == Blocks.WARPED_FUNGUS
+                || block == Blocks.CRIMSON_FUNGUS;
     }
 }
