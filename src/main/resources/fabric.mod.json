@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
 	"id": "sneakfertilizingmod",
-	"version": "1.0.2",
-	"name": "Sneak Fertilizer mod",
+	"version": "1.0.3",
+	"name": "Sneak Fertilizing mod",
 	"description": "Applies bonemeal effect to crops and saplings when sneaking.",
 	"authors": [
 		"TheAnkulai"
