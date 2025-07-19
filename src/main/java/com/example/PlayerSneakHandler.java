@@ -58,7 +58,6 @@ public class PlayerSneakHandler {
                 || block == Blocks.MELON_STEM
                 || block == Blocks.PUMPKIN_STEM
                 || block == Blocks.SWEET_BERRY_BUSH
-                || block == Blocks.NETHER_WART
                 || block == Blocks.OAK_SAPLING
                 || block == Blocks.SPRUCE_SAPLING
                 || block == Blocks.BIRCH_SAPLING
