@@ -2,20 +2,45 @@ package com.example;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Fertilizable;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.event.GameEvent;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class PlayerSneakHandler {
 
     private static final Map<UUID, Boolean> wasSneaking = new HashMap<>();
+    private static final Set<String> ALLOWED_IDS = Stream.of(
+            "wheat",
+            "carrots",
+            "potatoes",
+            "beetroots",
+            "melon_stem",
+            "pumpkin_stem",
+            "sweet_berry_bush",
+            "oak_sapling",
+            "spruce_sapling",
+            "birch_sapling",
+            "jungle_sapling",
+            "acacia_sapling",
+            "dark_oak_sapling",
+            "mangrove_propagule",
+            "cherry_sapling",
+            "bamboo_sapling",
+            "bamboo",
+            "warped_fungus",
+            "crimson_fungus"
+    ).collect(Collectors.toSet());
 
     public static void onPlayerTick(ServerPlayerEntity player) {
         UUID id = player.getUuid();
@@ -51,25 +76,8 @@ public class PlayerSneakHandler {
     }
 
     private static boolean isAllowedPlant(Block block) {
-        return block == Blocks.WHEAT
-                || block == Blocks.CARROTS
-                || block == Blocks.POTATOES
-                || block == Blocks.BEETROOTS
-                || block == Blocks.MELON_STEM
-                || block == Blocks.PUMPKIN_STEM
-                || block == Blocks.SWEET_BERRY_BUSH
-                || block == Blocks.OAK_SAPLING
-                || block == Blocks.SPRUCE_SAPLING
-                || block == Blocks.BIRCH_SAPLING
-                || block == Blocks.JUNGLE_SAPLING
-                || block == Blocks.ACACIA_SAPLING
-                || block == Blocks.DARK_OAK_SAPLING
-                || block == Blocks.MANGROVE_PROPAGULE
-                || block == Blocks.CHERRY_SAPLING
-                || block == Blocks.PALE_OAK_SAPLING
-                || block == Blocks.BAMBOO_SAPLING
-                || block == Blocks.BAMBOO
-                || block == Blocks.WARPED_FUNGUS
-                || block == Blocks.CRIMSON_FUNGUS;
+        Identifier id = Registries.BLOCK.getId(block);
+        String path = id.getPath();
+        return ALLOWED_IDS.contains(path);
     }
 }
