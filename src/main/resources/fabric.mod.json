@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "sneakfertilizingmod",
-	"version": "1.0.4+1.20.6",
+	"version": "1.0.4+1.20.5",
 	"name": "Sneak Fertilizing mod",
 	"description": "Applies bonemeal effect to crops and saplings when sneaking.",
 	"authors": [
@@ -19,7 +19,7 @@
 	"depends": {
 		"fabricloader": ">=0.16.14",
 		"fabric": "*",
-		"minecraft": "1.20.6",
+		"minecraft": "1.20.5",
 		"java": ">=21",
 		"fabric-api": "*"
 	}
