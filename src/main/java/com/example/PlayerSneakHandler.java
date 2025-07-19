@@ -67,7 +67,6 @@ public class PlayerSneakHandler {
                 || block == Blocks.DARK_OAK_SAPLING
                 || block == Blocks.MANGROVE_PROPAGULE
                 || block == Blocks.CHERRY_SAPLING
-                || block == Blocks.PALE_OAK_SAPLING
                 || block == Blocks.BAMBOO_SAPLING
                 || block == Blocks.BAMBOO
                 || block == Blocks.WARPED_FUNGUS
