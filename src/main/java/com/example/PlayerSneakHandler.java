@@ -64,7 +64,7 @@ public class PlayerSneakHandler {
             Block block = state.getBlock();
 
             if (isAllowedPlant(block) && block instanceof Fertilizable fertilizable) {
-                if (fertilizable.isFertilizable(world, pos, state) &&
+                if (fertilizable.isFertilizable(world, pos, state, world.isClient()) &&
                         fertilizable.canGrow(world, world.random, pos, state)) {
 
                     fertilizable.grow(world, world.random, pos, state);
